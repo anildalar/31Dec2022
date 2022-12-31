@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript Traversing</title>
+        <style>
+            div#grandparent{
+                border:5px solid red;
+            }
+            div#parent{
+                border:5px solid blue;
+            }
+            div.child1{
+                border:5px solid green;
+            }
+            div.child2{
+                border:5px solid orange;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="grandparent">
+            grandparent
+            <div id="parent">
+                parent
+                <div class="child1">
+                    child1
+                </div>
+                <div class="child2">
+                    child2
+                </div>
+            </div>
+        </div>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <td>
+                        Action
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        ANIL
+                    </td>
+                    <td>
+                        Dollor
+                    </td>
+                   
+                    <td>
+                        <button data-id="d1" onclick="deletetd(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Suryabhan
+                    </td>
+                    <td>
+                        Shisodiya
+                    </td>
+                    <td>
+                        <button data-id="d2"  onclick="deletetd(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Vishnu
+                    </td>
+                    <td>
+                        Jat
+                    </td>
+                    <td>
+                        <button data-id="d3"  onclick="deletetd(this)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script>
+            console.log();
+            //DRY
+            let c1 = document.querySelector('.child1');
+            c1.innerHTML = 'children1';
+            c1.style.border = '5px solid purple';
+
+            let gp = document.querySelector('.child2');
+
+            console.log(gp);
+
+
+
+            let ltd = document.querySelector('table tbody tr td:last-child');
+            ltd.style.color = 'pink';
+            console.log(ltd);
+
+            let tbody = ltd.closest('tbody');
+            //document.querySelector();
+            let suryabhantd = tbody.querySelector('tr:nth-child(2) td:first-child');
+
+            console.log(tbody);
+            suryabhantd.style.color = 'red';
+        </script>
+        <script>
+            function deletetd(elem){
+                console.log(elem);
+                let tr = elem.closest('tr');
+                tr.remove();
+                console.log(tr);
+            }
+        </script>
+    </body>
+</html>
