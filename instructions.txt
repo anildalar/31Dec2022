@@ -1,0 +1,16 @@
+Javascript Traversing (Travel)
+
+DOM (Document Object Model)
+
+Types of Traversing
+1. Parent to Child  document.querySelector()
+2. Child to Parent  closest()
+
+
+table -> tbody -> tr --> td last child
+
+Javscript Object
+{
+	//1. P:V
+	//2. Method
+}
